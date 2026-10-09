@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Registration &amp; Result Management | ITM Skills University</title>
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <img src="logo.png" alt="ITM Skills University seal">
+      <div><b>ITM Skills University</b><span>Full Stack Application · MCA</span></div>
+    </a>
+    <div class="nav-r">
+      <div class="nav-links">
+        <a href="#register">Register</a>
+        <a href="#resultCard">Result</a>
+        <a href="#records">Records</a>
+      </div>
+      <span class="who-chip">Nilesh Verma · Roll 58</span>
+      <button id="theme" class="theme-btn" type="button" aria-label="Toggle dark mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-in">
+    <p class="eyebrow">Assignment 01</p>
+    <h1>Student Registration<br>&amp; Result Management</h1>
+    <p class="lead">Enter marks, get an instant Pass/Fail verdict, and keep every record as JSON in your browser.</p>
+    <ol class="flow">
+      <li>Enter details</li><li>Validate</li><li>Calculate</li><li>Pass / Fail</li><li>Save as JSON</li>
+    </ol>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- Dashboard stats -->
+  <section class="stats">
+    <div class="stat"><span class="s-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></span><div><b id="sTotal">0</b><small>Students</small></div></div>
+    <div class="stat"><span class="s-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg></span><div><b id="sRate">0%</b><small>Pass Rate</small></div></div>
+    <div class="stat"><span class="s-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><div><b id="sAvg">0%</b><small>Average</small></div></div>
+    <div class="stat"><span class="s-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/></svg></span><div><b id="sTop">—</b><small>Topper</small></div></div>
+  </section>
+
+  <div class="layout">
+
+    <!-- Form -->
+    <section class="card" id="register">
+      <form id="f" novalidate>
+        <div class="sec-title"><span class="num">1</span><h2>Student Details</h2></div>
+        <div class="grid">
+          <div class="field"><label for="name">Full Name</label><input id="name" placeholder="e.g. Nilesh Verma" autocomplete="off"><div class="err" id="e-name"></div></div>
+          <div class="field"><label for="roll">Roll No</label><input id="roll" inputmode="numeric" placeholder="e.g. 58" autocomplete="off"><div class="err" id="e-roll"></div></div>
+          <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="name@example.com" autocomplete="off"><div class="err" id="e-email"></div></div>
+          <div class="field"><label for="course">Course</label>
+            <select id="course"><option value="">Select course</option><option>MCA</option><option>MSc IT</option><option>BSc IT</option><option>BCA</option></select>
+            <div class="err" id="e-course"></div></div>
+        </div>
+
+        <div class="sec-title"><span class="num">2</span><h2>Subject Marks <small>(out of 100)</small></h2>
+          <span class="live" id="live">Total: 0 / 500</span></div>
+        <div class="grid" id="subjects"></div>
+
+        <div class="btns">
+          <button type="submit" class="btn primary">Calculate &amp; Save</button>
+          <button type="button" class="btn ghost" id="sample">Fill Sample</button>
+          <button type="reset" class="btn ghost" id="resetBtn">Reset</button>
+        </div>
+        <p class="hint">Pass rule: minimum 35 marks in every subject.</p>
+      </form>
+    </section>
+
+    <!-- Result -->
+    <section class="card" id="resultCard" aria-live="polite">
+      <div class="sec-title"><span class="num">3</span><h2>Result</h2></div>
+      <div id="placeholder" class="placeholder">
+        <div class="ph-ico"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div>
+        <p>Fill the form and click <b>Calculate &amp; Save</b><br>to see the result here.</p>
+      </div>
+      <div id="result" hidden></div>
+    </section>
+  </div>
+
+  <!-- Records -->
+  <section class="card" id="records">
+    <div class="rec-head">
+      <h2>Saved Records <span class="pill" id="count">0</span></h2>
+      <div class="tools">
+        <input id="search" placeholder="Search name or roll no">
+        <div class="chips" id="chips">
+          <button type="button" class="chip on" data-f="all">All</button>
+          <button type="button" class="chip" data-f="Pass">Pass</button>
+          <button type="button" class="chip" data-f="Fail">Fail</button>
+        </div>
+        <button class="btn ghost sm" id="demo" type="button">Load Demo Data</button>
+        <button class="btn ghost sm" id="clear" type="button">Clear All</button>
+      </div>
+    </div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Roll</th><th>Student</th><th>Course</th><th>Total</th><th>%</th><th>Grade</th><th>Result</th><th></th></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="empty">No records found.</div>
+  </section>
+
+</main>
+
+<footer class="foot">Built with HTML5 · CSS3 · JavaScript — data is stored in your browser's Local Storage</footer>
+<div id="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
