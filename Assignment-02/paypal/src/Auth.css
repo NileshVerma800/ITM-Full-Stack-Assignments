@@ -1,0 +1,138 @@
+.auth-page {
+  display: flex;
+  justify-content: center;
+  padding: 50px 24px 60px;
+  background-color: #f5f7fa;
+  min-height: calc(100vh - 73px);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  height: fit-content;
+}
+
+.demo-badge {
+  display: inline-block;
+  background-color: #fff4d6;
+  color: #8a5a00;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.auth-card h1 {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.auth-description {
+  color: #545d68;
+  margin-top: 8px;
+  margin-bottom: 22px;
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-card label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.auth-card input {
+  padding: 13px 14px;
+  border: 1px solid #c9ced6;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  font-family: inherit;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+.auth-submit {
+  width: 100%;
+  margin-top: 6px;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #545d68;
+}
+
+.auth-footer a {
+  color: #000000;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.demo-note {
+  text-align: center;
+  font-size: 12px;
+  color: #8a9099;
+  margin-top: 14px;
+}
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.popup-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 32px 28px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+}
+
+.popup-card h2 {
+  font-size: 22px;
+  margin-top: 14px;
+}
+
+.popup-card p {
+  color: #545d68;
+  margin: 10px 0 20px;
+}
+
+.popup-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.popup-success {
+  background-color: #1a9f53;
+}
+
+.popup-error {
+  background-color: #d93025;
+}

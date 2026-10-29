@@ -35,7 +35,7 @@ Additional technologies will be added as the course progresses.
 | Assignment | Project | Technologies | Status |
 | --- | --- | --- | --- |
 | [Assignment-01](./Assignment-01) | Student Registration and Result Management System | HTML5, CSS3, JavaScript | Completed |
-| [Assignment-02](./Assignment-02) | Coming Soon | - | Pending |
+| [Assignment-02](./Assignment-02) | PayPal Open Landing Page (React App) | React.js, React Router, Vite, CSS3 | Completed |
 
 ---
 
@@ -54,7 +54,26 @@ Full-Stack-Assignments/
 │   └── script.js
 │
 └── Assignment-02/
-    └── README.md
+    ├── README.md
+    └── paypal/
+        ├── index.html
+        ├── package.json
+        ├── vite.config.js
+        └── src/
+            ├── main.jsx
+            ├── App.jsx
+            ├── App.css
+            ├── Auth.css
+            ├── index.css
+            ├── data/content.js
+            └── components/
+                ├── Navbar.jsx
+                ├── Home.jsx
+                ├── Toggle.jsx
+                ├── Hero.jsx
+                ├── Signup.jsx
+                ├── Login.jsx
+                └── Popup.jsx
 ```
 
 ---
