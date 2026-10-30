@@ -23,6 +23,8 @@ This repository contains my **Full Stack Application assignments** completed as 
 - **CSS3** – Styling, responsive design and layouts
 - **JavaScript** – Validation, DOM manipulation, events and browser storage
 - **React.js** – Component-based frontend development
+- **React Router** – Page routing in React applications
+- **Vite** – Fast build tool and development server for React
 - **REST APIs** – Frontend and backend communication
 - **Git & GitHub** – Version control and project management
 
